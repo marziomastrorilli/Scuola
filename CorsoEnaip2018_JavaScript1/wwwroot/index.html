@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    console.log("intro a js!");
+
+    console.log("JS is dynamic");
+    console.log("the same variable can store values of different types:");
+    var i = 5;
+    console.log("i: " + i);
+    i = "ciao";
+    console.log("i: " + i);
+
+    console.log("js is 'weakly-typed' or 'loosely-typed':");
+    var a1 = 5;
+    var a2 = "2";
+    var sum = a1 + a2;
+    console.log("number + string is converted in string:");
+    console.log(sum);
+    var diff = a1 - a2;
+    console.log("number - string is converted in number");
+    console.log(diff);
+
+    console.log("CONDITIONS");
+    console.log("You can use boolean but also other types.");
+    console.log("if(true) returns:");
+    if(true) {
+      console.log("is true");
+    } else {
+      console.log("is false");
+    }
+    console.log("with numbers, 0 returns false, non-0 returns true.");
+    console.log("if(1):");
+    if(1) {
+      console.log("is true");
+    } else {
+      console.log("is false");
+    }
+    console.log("if(0):");
+    if(0) {
+      console.log("is true");
+    } else {
+      console.log("is false");
+    }
+
+    console.log("with strings, an empty string returns false, the others return true.");
+    console.log('if("ciao"):');
+    if("ciao") {
+      console.log("is true");
+    } else {
+      console.log("is false");
+    }
+    console.log("if(0):");
+    console.log('if(""):');
+    if("") {
+      console.log("is true");
+    } else {
+      console.log("is false");
+    }
+
+    console.log("this can generate confusion:");
+    console.log('if(0) is false, if("0") is true...');
+    console.log('but 0 == "0" is true!');
+    console.log('and also, "0" == false is true!');
+
+    console.log("the single = is for assignments of values to variables");
+
+    console.log("the double == is for comparing 'loosely' two values");
+    console.log("this means that if they are of different types,");
+    console.log("js tries to convert to the same type");
+    console.log('for example, "0" is a string and 0 is a number,');
+    console.log('but "0" == 0 returns:');
+    console.log("0" == 0);
+
+    var i = 3;
+    var i3 = i + i2;
+    var i2 = 6;
+    var i2 = 4;
+    console.log("i = " + i);
+    console.log("i2 = " + i2);
+    console.log("i3 = " + i3);
+
+    console.log("ciclo for:")
+    for(var index = 0; index < 3; index++) {
+      console.log("index vale: " + index);
+    }
+    console.log("fuori dal loop index vale: " + index);
+
+    console.log("i = " + i);
+
+    function Sum(a1, a2){
+      return a1+a2;
+    }
+
+    try {
+      throw new Error();
+    } catch(e){
+      if(e instanceof ReferenceError){
+        console.log("e is Error");
+      } else {
+        console.log("e is NOT Error");
+      }
+    }
+
+    function HideH1() {
+      var titleId = document.getElementById("title");
+      titleId.style.textAlign = "center";
+      
+      var titleClassElements = document.getElementsByClassName("title");
+      for(var i = 0; i < titleClassElements.length; i++){
+        // this put an inline style
+        // titleClassElements[i].style.color = "blue";
+
+        var classes = titleClassElements[i].classList;
+        var firstClass = classes[0];
+        classes.remove(firstClass);
+        classes.add("changed-title");
+        classes.add(firstClass);
+        console.log(classes);
+      }
+
+      // var x = document.get
+    }
+
+    function updateCount(){
+      var ta = document.getElementById("words");
+      var p = document.getElementById("words-count");
+      p.innerHTML = ta.value.length;
+    }
+
+  </script>
+  <style>
+    .title {
+      color: red;
+    }
+    .changed-title {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title" class="title">Hello!</h1>
+  <h1 class="title">Hello!</h1>
+  <button onclick="Foo();">Click me!</button>
+  <button onclick="HideH1();">Hide the title!</button>
+  <textarea id="words" onkeyup="updateCount();"></textarea>
+  <p id="words-count"></p>
+</body>
+</html>
