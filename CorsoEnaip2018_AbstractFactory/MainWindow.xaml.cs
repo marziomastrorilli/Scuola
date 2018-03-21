@@ -51,7 +51,7 @@ namespace CorsoEnaip2018_AbstractFactory
     {
         public List<string> FindAll()
         {
-            using (var conn = new SqlConnection(@"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEuris_Kraus;Integrated Security=True"))
+            using (var conn = new SqlConnection(@"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEurisMarzio;Integrated Security=True"))
             {
                 conn.Open();
 

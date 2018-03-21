@@ -7,49 +7,48 @@ using System.Threading.Tasks;
 
 namespace CorsoEnaip2018_SuperHeroes.DataAccess
 {
-    public class SuperHeroEntityFrameworkRepository : IRepository<SuperHero>
+    public class VillainEntityFrameworkRepository : IRepository<Villain>
     {
         private AppDbContext _context;
 
-        public SuperHeroEntityFrameworkRepository(
-            AppDbContext context)
+        public VillainEntityFrameworkRepository(AppDbContext context)
         {
             _context = context;
         }
 
-        public bool Delete(SuperHero model)
+        public bool Delete(Villain model)
         {
-            _context.SuperHeroes.Remove(model);
+            _context.Villains.Remove(model);
 
             var result = _context.SaveChanges();
 
             return result == 1;
         }
 
-        public SuperHero Find(int id)
+        public Villain Find(int id)
         {
-            return _context.SuperHeroes.FirstOrDefault(x => x.Id == id);
+            return _context.Villains.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<SuperHero> FindAll()
+        public List<Villain> FindAll()
         {
-            var models = _context.SuperHeroes
-                .Include(x => x.Enemies)
+            var models = _context.Villains
+                .Include(x => x.Nemesis)
                 .ToList();
 
             return models;
         }
 
-        public void Insert(SuperHero model)
+        public void Insert(Villain model)
         {
-            _context.SuperHeroes.Add(model);
+            _context.Villains.Add(model);
 
             _context.SaveChanges();
         }
 
-        public bool Update(SuperHero model)
+        public bool Update(Villain model)
         {
-            _context.SuperHeroes.Update(model);
+            _context.Villains.Update(model);
 
             var result = _context.SaveChanges();
 

@@ -18,7 +18,7 @@ namespace CorsoEnaip2018_Employees.Test
             // creo lista di Employee con Pay/Bonus/Malus diversi.
             var list = createEmployees();
 
-            var db = new EmployeeDatabase(@"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEuris_Kraus;Integrated Security=True");
+            var db = new EmployeeDatabase(@"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEurisMarzio;Integrated Security=True");
 
             db.Save(list);
 

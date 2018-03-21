@@ -10,7 +10,7 @@ namespace CorsoEnaip2018_ProjectManagement.DataAccess
 {
     public class SqlProjectRepository : IRepository<Project>
     {
-        public const string CONNECTION_STRING = @"Data Source=TRISRV10\SQLEXPRESS;Database=CorsoEuris_Kraus;Integrated Security=True";
+        public const string CONNECTION_STRING = @"Data Source=TRISRV10\SQLEXPRESS;Database=CorsoEurisMarzio;Integrated Security=True";
 
         public bool Delete(Project model)
         {

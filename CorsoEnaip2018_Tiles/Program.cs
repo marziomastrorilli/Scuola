@@ -48,7 +48,7 @@ namespace CorsoEnaip2018_Tiles
         static void InsertOnDatabase(
             double meters, double pack, double packPrice, string customer)
         {
-            string connectionString = @"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEuris_Kraus;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = @"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEurisMarzio;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -80,7 +80,7 @@ namespace CorsoEnaip2018_Tiles
 
         static Estimate SelectWithId(int id)
         {
-            string connectionString = @"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEuris_Kraus;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = @"Data Source=TRISRV10\SQLEXPRESS;Initial Catalog=CorsoEurisMarzio;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             SqlConnection conn = new SqlConnection(connectionString);
 
